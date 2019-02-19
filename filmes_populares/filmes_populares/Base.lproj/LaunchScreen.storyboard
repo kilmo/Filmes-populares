@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75b-oo-WRV">
+                                <rect key="frame" x="20" y="242.66666666666663" width="335" height="327"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmes Populares" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I1-gE-hb6">
+                                        <rect key="frame" x="20" y="0.0" width="295" height="107.66666666666667"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="41"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movies" translatesAutoresizingMaskIntoConstraints="NO" id="p1r-x1-nAB">
+                                        <rect key="frame" x="82.666666666666686" y="147.66666666666666" width="170" height="169.99999999999997"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="p1r-x1-nAB" secondAttribute="height" multiplier="1:1" id="GAN-u1-3yU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="p1r-x1-nAB" firstAttribute="centerX" secondItem="75b-oo-WRV" secondAttribute="centerX" id="6Dd-QZ-rqc"/>
+                                    <constraint firstAttribute="width" secondItem="75b-oo-WRV" secondAttribute="height" multiplier="335:327" id="SlB-br-zxO"/>
+                                    <constraint firstItem="4I1-gE-hb6" firstAttribute="top" secondItem="75b-oo-WRV" secondAttribute="top" id="YGz-Xa-2Sz"/>
+                                    <constraint firstItem="p1r-x1-nAB" firstAttribute="top" secondItem="4I1-gE-hb6" secondAttribute="bottom" constant="40" id="cWn-b9-PiS"/>
+                                    <constraint firstAttribute="trailing" secondItem="4I1-gE-hb6" secondAttribute="trailing" constant="20" id="jkw-vu-DJs"/>
+                                    <constraint firstItem="4I1-gE-hb6" firstAttribute="leading" secondItem="75b-oo-WRV" secondAttribute="leading" constant="20" id="nJS-1G-ue5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="75b-oo-WRV" secondAttribute="trailing" constant="20" id="BVd-M1-EVt"/>
+                            <constraint firstItem="75b-oo-WRV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="K1L-au-cQD"/>
+                            <constraint firstItem="75b-oo-WRV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gUn-e7-9Tg"/>
+                            <constraint firstItem="75b-oo-WRV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="lDc-UT-fSr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="movies" width="170" height="170"/>
+    </resources>
+</document>
