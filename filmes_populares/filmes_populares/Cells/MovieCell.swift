@@ -1,5 +1,5 @@
 //
-//  MovieCellView.swift
+//  MovieCell.swift
 //  filmes_populares
 //
 //  Created by Érika Moriya on 19/02/19.
@@ -9,19 +9,11 @@
 import Foundation
 import UIKit
 
-class MovieCellView: UITableViewCell {
+class MovieCell: UITableViewCell {
     
     @IBOutlet weak var uiView: MovieCellView?
     var movie: Movie?
-    
-    init() {
-        super.init(nibName: "MovieCellView", bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         guard let movie = self.movie else {
@@ -29,7 +21,7 @@ class MovieCellView: UITableViewCell {
             return
         }
         self.uiView?.uiName?.text = "Nome: " + movie.title
-        self.uiView?.uiRating?.text = "   : \(String(describing: movie.rating))"
+        self.uiView?.uiRating?.text = "Avaliação: \(String(describing: movie.rating))"
         self.uiView?.uiDate?.text = movie.releaseDate
         self.uiView?.uiPoster?.image = #imageLiteral(resourceName: "movies")
         

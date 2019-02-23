@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieCellController" customModule="filmes_populares" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieCell" customModule="filmes_populares" customModuleProvider="target">
             <connections>
                 <outlet property="uiDate" destination="O0L-zy-jL2" id="IRU-LQ-lkL"/>
                 <outlet property="uiName" destination="9Xq-vc-aoa" id="YYi-g3-VEX"/>
@@ -20,7 +20,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="mrX-2j-oMi" customClass="MovieCellView" customModule="filmes_populares" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="mrX-2j-oMi" userLabel="Movie CellView" customClass="MovieCellView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -68,17 +68,23 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="r1u-yd-R45"/>
+            <connections>
+                <outlet property="uiDate" destination="O0L-zy-jL2" id="TYO-CT-bC1"/>
+                <outlet property="uiName" destination="9Xq-vc-aoa" id="CHT-pw-o73"/>
+                <outlet property="uiPoster" destination="5OY-9E-Xxq" id="asn-4q-FxU"/>
+                <outlet property="uiRating" destination="Upi-Nz-ry0" id="kZ6-cg-BIs"/>
+            </connections>
             <point key="canvasLocation" x="-201" y="-326"/>
         </view>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCellController" id="2ca-Bg-0YA">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="2ca-Bg-0YA" userLabel="movieCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ca-Bg-0YA" id="CBY-pJ-Nl9">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng3-oD-DSi" customClass="MovieCellView" customModule="filmes_populares" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng3-oD-DSi" customClass="MovieCell" customModule="filmes_populares" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>

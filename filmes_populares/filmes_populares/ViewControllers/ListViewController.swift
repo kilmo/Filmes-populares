@@ -14,10 +14,18 @@ class ListViewController: UIViewController {
     
     var dataSource: [Movie]?
     
+    init() {
+        super.init(nibName: "ListViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        uiTableView?.register(MovieCell.self, forCellReuseIdentifier: "movieCell")
+//        uiTableView?.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,13 +47,15 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCellController", for: indexPath) as? MovieCellController {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieCell {
             cell.movie = self.dataSource?[indexPath.row]
+            
             return cell
         }
         
