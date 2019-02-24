@@ -14,8 +14,6 @@ class MoviesListViewController: ListViewController {
         super.viewDidLoad()
         uiTableView?.delegate = self
         uiTableView?.dataSource = self
-        print("#########   \(self.dataSource?.count)   #########")
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,18 +21,11 @@ class MoviesListViewController: ListViewController {
         // Dispose of any resources that can be recreated.
     }
 
-}
-
-extension MoviesListViewController: UITableViewDelegate {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-        
-    }
-    
 }

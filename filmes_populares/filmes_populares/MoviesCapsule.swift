@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import TMDBSwift
 
 class MoviesCapsule{
 /*
@@ -25,7 +27,7 @@ class MoviesCapsule{
         
         dataTask?.cancel()
         
-        guard let listUrl = URL(string: trendingPath+apiKey) else {
+        guard let listUrl = URL(string: trendingPath + apiKey) else {
             print("[MoviesCapsule] Error creating url")
             return
         }
@@ -51,5 +53,4 @@ class MoviesCapsule{
         })
         dataTask?.resume()
     }
-    
 }
