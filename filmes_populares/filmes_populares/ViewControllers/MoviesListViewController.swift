@@ -12,6 +12,7 @@ class MoviesListViewController: ListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Filmes Populares"
         uiTableView?.delegate = self
         uiTableView?.dataSource = self
         
