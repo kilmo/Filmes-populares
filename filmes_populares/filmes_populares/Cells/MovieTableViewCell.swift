@@ -15,11 +15,7 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var uiReleaseDate: UILabel?
     @IBOutlet weak var uiRating: UILabel?
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    private let baseImagePath = "http://image.tmdb.org/t/p/w92"
     
     func setupCell(movie: Movie){
         
@@ -28,11 +24,11 @@ class MovieTableViewCell: UITableViewCell {
             return
         }
         
-        self.uiTitle?.text = "Nome: " + movie.title
-        self.uiRating?.text = "Avaliação: \(String(describing: rate))"
+        self.uiTitle?.text = movie.title
+        self.uiRating?.text = String(describing: rate)
         self.uiReleaseDate?.text = formatDate(date: date)
         //self.uiPoster?.downloadImage(from: urlString)
-        self.uiPoster?.downloadImage(from: "https://sketchok.com/images/articles/01-cartoons/000-va/120/10.jpg")
+        self.uiPoster?.downloadImage(from: baseImagePath + urlString)
         
     }
     

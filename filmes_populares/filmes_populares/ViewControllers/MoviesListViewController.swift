@@ -14,6 +14,11 @@ class MoviesListViewController: ListViewController {
         super.viewDidLoad()
         uiTableView?.delegate = self
         uiTableView?.dataSource = self
+        
+        MoviesCapsule.shared.downloadMoviesList(page: 1){
+            self.dataSource = MoviesCapsule.shared.moviesList?.results
+            self.uiTableView?.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
