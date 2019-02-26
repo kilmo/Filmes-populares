@@ -27,12 +27,18 @@ import UIKit
  */
 
 class Movie: Codable {
+    
+    private let baseImagePath = "http://image.tmdb.org/t/p/w154"
+    
     // Used now
     let identifier: Int
     let title: String
     let posterPath: String?
     let releaseDate: String?
-    let rating: Float?
+    private let rawRating: Float?
+    var rating: String {
+        return formatFloatToString(number: rawRating)
+    }
 
     // Future use
     let adult: Bool
@@ -51,7 +57,7 @@ class Movie: Codable {
         case title
         case posterPath         = "poster_path"
         case releaseDate        = "release_date"
-        case rating             = "vote_average"
+        case rawRating          = "vote_average"
         
         case popularity, adult, overview, video
         case backdropPath       = "backdrop_path"
@@ -62,12 +68,12 @@ class Movie: Codable {
         
     }
     
-    init(identifier: Int, title: String, posterPath: String?, releaseDate: String?, rating: Float?, adult: Bool, backdropPath: String?, genreIds: [Int]?, originalLanguage: String, originalTitle: String?, overview: String?, video: Bool, voteCount: Int?, popularity: Float?) {
+    init(identifier: Int, title: String, posterPath: String?, releaseDate: String?, rawRating: Float?, adult: Bool, backdropPath: String?, genreIds: [Int]?, originalLanguage: String, originalTitle: String?, overview: String?, video: Bool, voteCount: Int?, popularity: Float?) {
         self.identifier = identifier
         self.title = title
         self.posterPath = posterPath
         self.releaseDate = releaseDate
-        self.rating = rating
+        self.rawRating = rawRating
         self.adult = adult
         self.backdropPath = backdropPath
         self.genreIds = genreIds
@@ -77,5 +83,18 @@ class Movie: Codable {
         self.video = video
         self.voteCount = voteCount
         self.popularity = popularity
+    }
+    
+    func formatFloatToString(number: Float?) -> String {
+        guard let rawNumber = number else {
+            return ""
+        }
+        let num = NSNumber(value: rawNumber)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        if let str = formatter.string(from: num){
+            return str
+        }
+        return ""
     }
 }

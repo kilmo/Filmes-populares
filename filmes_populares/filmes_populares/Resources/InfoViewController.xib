@@ -44,9 +44,10 @@
 https://www.flaticon.com/authors/flat-icons
 https://www.flaticon.com/authors/freepik	
 https://www.flaticon.com/authors/anton-saputro
+https://www.flaticon.com/authors/daniel-bruce
 
 from www.flaticon.com </string>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>

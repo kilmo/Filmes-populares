@@ -24,10 +24,10 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Detalhes"
         uiPoster?.image = posterImage
         uiTitle?.text = movie?.title
-        uiRating?.text = String(describing: movie?.rating)
+        uiRating?.text = movie?.rating
         uiReleaseDate?.text = movie?.releaseDate
         uiDirector?.text = director?.name
         uiAuthor?.text = author?.name

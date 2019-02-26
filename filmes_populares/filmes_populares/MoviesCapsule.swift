@@ -17,6 +17,7 @@ class MoviesCapsule{
     private let creditPath = "https://api.themoviedb.org/3/movie/399579/credits?language=pt-BR&api_key="
     var moviesList: MoviesList?
     var credits: Credits?
+    var allMovies: [Movie] = []
     private let session: URLSession = URLSession(configuration: .default)
     private var dataTask: URLSessionDataTask? = nil
     
@@ -37,6 +38,11 @@ class MoviesCapsule{
                     let decoder = JSONDecoder()
                     let rawMoviesList = try decoder.decode(MoviesList.self, from: rawData)
                     DispatchQueue.main.async {
+                        
+                        if rawMoviesList.page > self.moviesList?.page ?? 0 {
+                            self.allMovies += rawMoviesList.results
+                        }
+                        
                         self.moviesList = rawMoviesList
                         completion()
                     }
