@@ -27,6 +27,7 @@ class MoviesListViewController: ListViewController {
     }
     
     @objc func refreshList(){
+        MoviesCapsule.shared.allMovies = []
         loadList(page: 1)
         self.uiTableView?.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
