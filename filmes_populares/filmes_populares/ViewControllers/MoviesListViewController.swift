@@ -28,7 +28,10 @@ class MoviesListViewController: ListViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let newViewController = MovieDetailsViewController(nibName: "MovieDetailsViewController", bundle: nil)
+        newViewController.posterImage = (tableView.cellForRow(at: indexPath) as? MovieTableViewCell)?.uiPoster?.image
+        newViewController.movie = MoviesCapsule.shared.moviesList?.results[indexPath.row]
+        NavigationManager.shared.tabBarController.viewControllers?.first?.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

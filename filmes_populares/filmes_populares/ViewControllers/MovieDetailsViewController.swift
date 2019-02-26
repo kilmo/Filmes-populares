@@ -10,10 +10,25 @@ import UIKit
 
 class MovieDetailsViewController: UIViewController {
 
+    @IBOutlet weak var uiPoster: UIImageView?
+    @IBOutlet weak var uiTitle: UILabel?
+    @IBOutlet weak var uiRating: UILabel?
+    @IBOutlet weak var uiReleaseDate: UILabel?
+    @IBOutlet weak var uiDirector: UILabel?
+    @IBOutlet weak var uiAuthor: UILabel?
+    
     var movie: Movie?
+    var posterImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        uiPoster?.image = posterImage
+        uiTitle?.text = movie?.title
+        uiRating?.text = String(describing: movie?.rating)
+        uiReleaseDate?.text = movie?.releaseDate
+        uiDirector?.text =
+        
 
         // Do any additional setup after loading the view.
     }
@@ -23,15 +38,4 @@ class MovieDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
