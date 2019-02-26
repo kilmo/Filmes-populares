@@ -3,6 +3,8 @@ PetLove
 
 Observações de melhorias:
 
+Adicionaria uma tela de loading.
+
 Na parte de detalhes colocaria a sinopse do filme também.
 
 Adicionaria um enum com as categorias da lista de filmes, assim como pesquisa por gênero ou diretor, para poder disponibilizar para o usuário mais informações e facilitar sua busca.
