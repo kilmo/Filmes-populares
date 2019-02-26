@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        MoviesCapsule.shared.setupConfigCapsule()
         window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = NavigationManager.shared.tabBarController
         self.window?.makeKeyAndVisible()

@@ -19,6 +19,8 @@ class MovieDetailsViewController: UIViewController {
     
     var movie: Movie?
     var posterImage: UIImage?
+    var director: Staff?
+    var author: Staff?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,9 @@ class MovieDetailsViewController: UIViewController {
         uiTitle?.text = movie?.title
         uiRating?.text = String(describing: movie?.rating)
         uiReleaseDate?.text = movie?.releaseDate
-        uiDirector?.text =
+        uiDirector?.text = director?.name
+        uiAuthor?.text = author?.name
         
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

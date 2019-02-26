@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B0157292222E101005E2C6D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0157282222E101005E2C6D /* Extensions.swift */; };
+		1B019A3F2224F31D0083767A /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B019A3E2224F31D0083767A /* Credits.swift */; };
 		1BE75AEA2221E43A008E7D99 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE75AE82221E43A008E7D99 /* MovieTableViewCell.swift */; };
 		1BE75AEB2221E43A008E7D99 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BE75AE92221E43A008E7D99 /* MovieTableViewCell.xib */; };
 		1BFB7077221C5D0A0096404C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB7076221C5D0A0096404C /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1B0157282222E101005E2C6D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1B019A3E2224F31D0083767A /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		1BE75AE82221E43A008E7D99 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		1BE75AE92221E43A008E7D99 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		1BFB7073221C5D0A0096404C /* filmes_populares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = filmes_populares.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			children = (
 				1BFB70AC221C94870096404C /* Movie.swift */,
 				1BFD3E4122219E5E00F0B808 /* MoviesList.swift */,
+				1B019A3E2224F31D0083767A /* Credits.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				1BFD3E4222219E5E00F0B808 /* MoviesList.swift in Sources */,
 				1BE75AEA2221E43A008E7D99 /* MovieTableViewCell.swift in Sources */,
 				1B0157292222E101005E2C6D /* Extensions.swift in Sources */,
+				1B019A3F2224F31D0083767A /* Credits.swift in Sources */,
 				1BFB70AA221C91E30096404C /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

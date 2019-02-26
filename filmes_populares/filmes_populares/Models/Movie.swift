@@ -32,7 +32,7 @@ class Movie: Codable {
     let title: String
     let posterPath: String?
     let releaseDate: String?
-    let rating: CGFloat?
+    let rating: Float?
 
     // Future use
     let adult: Bool
@@ -43,7 +43,7 @@ class Movie: Codable {
     let overview: String?
     let video: Bool
     let voteCount: Int?
-    let popularity: Int?
+    let popularity: Float?
     
     
     enum CodingKeys: String, CodingKey {
@@ -62,7 +62,7 @@ class Movie: Codable {
         
     }
     
-    init(identifier: Int, title: String, posterPath: String?, releaseDate: String?, rating: CGFloat?, adult: Bool, backdropPath: String?, genreIds: [Int]?, originalLanguage: String, originalTitle: String?, overview: String?, video: Bool, voteCount: Int?, popularity: Int?) {
+    init(identifier: Int, title: String, posterPath: String?, releaseDate: String?, rating: Float?, adult: Bool, backdropPath: String?, genreIds: [Int]?, originalLanguage: String, originalTitle: String?, overview: String?, video: Bool, voteCount: Int?, popularity: Float?) {
         self.identifier = identifier
         self.title = title
         self.posterPath = posterPath
