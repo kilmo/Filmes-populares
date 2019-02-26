@@ -19,13 +19,12 @@ class ListViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiTableView?.register(MovieCell.self, forCellReuseIdentifier: "movieCell")
-//        uiTableView?.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")        // Do any additional setup after loading the view.
+        uiTableView?.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "movieCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,17 +32,6 @@ class ListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -53,13 +41,25 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieCell {
-            cell.movie = self.dataSource?[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell, let data = self.dataSource {
+            cell.setupCell(movie: data[indexPath.row])
             
             return cell
         }
         
         return UITableViewCell()
+    }
+    
+}
+
+extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //stub
     }
     
 }

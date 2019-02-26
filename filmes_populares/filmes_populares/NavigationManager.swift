@@ -19,10 +19,9 @@ class NavigationManager {
     private init(){
         self.tabBarController = UITabBarController()
         self.viewControllers = [MoviesListViewController(), InfoViewController()]
-        (self.viewControllers[0] as? MoviesListViewController)?.dataSource = MoviesCapsule.shared.moviesList
-
-        let icons = [UITabBarItem(title: "Lista", image: UIImage(named:"movie-list"), tag: 0), UITabBarItem(title: "Info", image: UIImage(named:"info"), tag: 1)]
         
+        let icons = [UITabBarItem(title: "Lista", image: UIImage(named:"movie-list"), tag: 0), UITabBarItem(title: "Info", image: UIImage(named:"info"), tag: 1)]
+        self.tabBarController.tabBar.tintColor = .red
         self.tabBarController.viewControllers = viewControllers.enumerated().map{ (index, item) in
             item.tabBarItem = icons[index]
             return UINavigationController(rootViewController: item)

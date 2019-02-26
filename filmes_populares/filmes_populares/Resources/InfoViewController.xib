@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,10 +17,56 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.85860687494277954" green="0.90816527605056763" blue="0.38782036304473877" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This product uses the TMDb API but is not endorsed or certified by TMDb." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l12-yL-PHj">
+                    <rect key="frame" x="10" y="40" width="300" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theMovieDB" translatesAutoresizingMaskIntoConstraints="NO" id="ksV-4E-e1C">
+                    <rect key="frame" x="110" y="101" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ksV-4E-e1C" secondAttribute="height" multiplier="1:1" id="83D-NV-MCg"/>
+                        <constraint firstAttribute="height" constant="100" id="dcI-E2-qD1"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEy-c6-4xw">
+                    <rect key="frame" x="10" y="226" width="300" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="qi8-Xb-df3"/>
+                    </constraints>
+                    <string key="text">Icons made by 
+
+https://www.flaticon.com/authors/flat-icons
+https://www.flaticon.com/authors/freepik	
+https://www.flaticon.com/authors/anton-saputro
+https://www.flaticon.com/authors/daniel-bruce
+
+from www.flaticon.com </string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ksV-4E-e1C" firstAttribute="top" secondItem="l12-yL-PHj" secondAttribute="bottom" constant="20" id="1kg-Uv-jSs"/>
+                <constraint firstItem="sEy-c6-4xw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="9J6-oF-CeK"/>
+                <constraint firstItem="sEy-c6-4xw" firstAttribute="top" secondItem="ksV-4E-e1C" secondAttribute="bottom" constant="25" id="Rga-jR-mQd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l12-yL-PHj" secondAttribute="trailing" constant="10" id="U5t-ES-Qdz"/>
+                <constraint firstItem="ksV-4E-e1C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eDZ-DA-TBY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sEy-c6-4xw" secondAttribute="trailing" constant="10" id="kNh-rC-QdB"/>
+                <constraint firstItem="l12-yL-PHj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="kwX-Gi-zD7"/>
+                <constraint firstItem="l12-yL-PHj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ydV-Gh-Qpq"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="93.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="theMovieDB" width="97" height="100"/>
+    </resources>
 </document>
