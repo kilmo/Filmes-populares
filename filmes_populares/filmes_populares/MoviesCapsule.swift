@@ -9,23 +9,26 @@
 import Foundation
 import UIKit
 
-class MoviesCapsule{
+class MoviesCapsule {
 
     static let shared = MoviesCapsule()
+    
     private let apiKey = "96e11fe17ace3e955e28c24454bfd5ab"
-    private let popularPath = "https://api.themoviedb.org/3/movie/popular?language=pt-BR&api_key="
-    private let creditPath = "https://api.themoviedb.org/3/movie/399579/credits?language=pt-BR&api_key="
+    private let baseURL = "https://api.themoviedb.org/3/movie/"
+    private let popularPath = "popular?language=pt-BR&api_key="
+    private let creditPath = "/credits?language=pt-BR&api_key="
+    
     var moviesList: MoviesList?
     var credits: Credits?
     var allMovies: [Movie] = []
+    
     private let session: URLSession = URLSession(configuration: .default)
     private var dataTask: URLSessionDataTask? = nil
     
     func downloadMovies(page: Int, completion: @escaping () -> Void){
-        
         dataTask?.cancel()
         
-        guard let listUrl = URL(string: popularPath + apiKey + "&page:\(String(describing: page))") else {
+        guard let listUrl = URL(string: baseURL + popularPath + apiKey + "&page:\(String(describing: page))") else {
             print("[MoviesCapsule] Error creating url")
             return
         }
@@ -57,10 +60,10 @@ class MoviesCapsule{
         dataTask?.resume()
     }
     
-    func downloadCredits(completion: @escaping () -> Void){
+    func downloadCredits(movieId: Int, completion: @escaping () -> Void){
         dataTask?.cancel()
         
-        guard let listUrl = URL(string: creditPath + apiKey) else {
+        guard let listUrl = URL(string:baseURL + movieId.description + creditPath + apiKey) else {
             print("[MoviesCapsule] Error creating url")
             return
         }

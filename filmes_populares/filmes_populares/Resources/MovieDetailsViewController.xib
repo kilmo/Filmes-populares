@@ -73,7 +73,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87g-Hj-5Oe">
-                    <rect key="frame" x="80" y="367" width="275" height="19"/>
+                    <rect key="frame" x="82" y="367" width="273" height="19"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                 <constraint firstItem="EcF-zN-qk2" firstAttribute="centerY" secondItem="UKn-ra-ltv" secondAttribute="centerY" id="NiY-Jp-EZC"/>
                 <constraint firstItem="87g-Hj-5Oe" firstAttribute="centerY" secondItem="BsK-lD-wnK" secondAttribute="centerY" id="OkK-P9-Kqc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zhM-Hf-K8s" secondAttribute="trailing" constant="20" id="TZZ-nq-UvN"/>
-                <constraint firstItem="87g-Hj-5Oe" firstAttribute="leading" secondItem="BsK-lD-wnK" secondAttribute="trailing" id="TpU-9k-mjD"/>
+                <constraint firstItem="87g-Hj-5Oe" firstAttribute="leading" secondItem="BsK-lD-wnK" secondAttribute="trailing" constant="2" id="TpU-9k-mjD"/>
                 <constraint firstItem="87g-Hj-5Oe" firstAttribute="trailing" secondItem="zhM-Hf-K8s" secondAttribute="trailing" id="Vto-iB-PRw"/>
                 <constraint firstItem="zhM-Hf-K8s" firstAttribute="top" secondItem="ipc-By-OOd" secondAttribute="bottom" constant="20" id="XbO-3W-drN"/>
                 <constraint firstItem="UKn-ra-ltv" firstAttribute="top" secondItem="BsK-lD-wnK" secondAttribute="bottom" constant="15" id="eKF-Nu-vPq"/>

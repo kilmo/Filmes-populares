@@ -11,9 +11,11 @@ import XCTest
 
 class filmes_popularesTests: XCTestCase {
     
+    var downloadExpectation: XCTestExpectation?
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        downloadExpectation = nil
     }
     
     override func tearDown() {
@@ -21,9 +23,18 @@ class filmes_popularesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDownloadList() {
+        downloadExpectation = expectation(description: "Valid movie list object")
+        MoviesCapsule.shared.downloadMovies(page: 1, completion: {
+            XCTAssertNotNil(MoviesCapsule.shared.moviesList, "Expected a MovieList")
+            MoviesCapsule.shared.downloadCredits(completion: <#T##() -> Void#>)
+            
+            self.downloadExpectation?.fulfill()
+        })
+    }
+    
+    func testDownloadCredit() {
+        
     }
     
     func testPerformanceExample() {

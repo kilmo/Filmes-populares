@@ -14,11 +14,11 @@ class MoviesListViewController: ListViewController {
         super.viewDidLoad()
         uiTableView?.delegate = self
         uiTableView?.dataSource = self
-//        self.title = "Filmes"
         addNavigationItem()
         loadList(page: 1)
     }
 
+    // Add button to refresh tableview in NavigationBar
     func addNavigationItem(){
         let refreshButton = UIBarButtonItem(image: UIImage(named:"refresh"), style: .plain, target: self, action: #selector(refreshList))
         refreshButton.tintColor = .black
@@ -26,6 +26,7 @@ class MoviesListViewController: ListViewController {
         self.navigationItem.rightBarButtonItem = refreshButton
     }
     
+    // Refresh TableView and scroll to top
     @objc func refreshList(){
         MoviesCapsule.shared.allMovies = []
         loadList(page: 1)
@@ -41,12 +42,12 @@ class MoviesListViewController: ListViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newViewController = MovieDetailsViewController(nibName: "MovieDetailsViewController", bundle: nil)
-        MoviesCapsule.shared.downloadCredits(){
+        //download credits from the selected movie
+        MoviesCapsule.shared.downloadCredits(movieId: MoviesCapsule.shared.allMovies[indexPath.row].identifier, completion: {
             
             if let credits = MoviesCapsule.shared.credits?.crew {
                 for staff in credits {
@@ -60,7 +61,7 @@ class MoviesListViewController: ListViewController {
             newViewController.posterImage = (tableView.cellForRow(at: indexPath) as? MovieTableViewCell)?.uiPoster?.image
             newViewController.movie = self.dataSource?[indexPath.row]
             self.navigationController?.pushViewController(newViewController, animated: true)
-        }
+        })
         
     }
     
